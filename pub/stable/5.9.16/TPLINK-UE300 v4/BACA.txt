@@ -1,0 +1,5 @@
+- masuk openwrt dan buka terminal dan ketik rmmod r8152 dan pastikan di kernel log ada tulisan "usbcore: deregistering interface driver r8152"
+- lalu masuk direktory /lib/modules/5.9.16/kernel/drivers/net/usb/ lalu rename r8152.ko asli menjadi r8152.ko-backup, lalu download file r8152.ko dari sini dan taruh ke /lib/modules/5.9.16/kernel/drivers/net/usb/
+- lalu ketik insmod /lib/modules/5.9.16/kernel/drivers/net/usb/r8152.ko dan liat di kernel akan ada tulisan  "usbcore: registered new interface driver r8152"
+- lalu taruh file 50-usb-realtek-net.rules ke /etc/udev/rules.d/
+-REBOOT
