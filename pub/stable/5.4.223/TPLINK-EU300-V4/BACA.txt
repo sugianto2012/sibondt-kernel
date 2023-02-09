@@ -1,0 +1,14 @@
+- rmmod r8152
+- mv /lib/modules/6.0.6/kernel/drivers/net/usb/r8152.ko /lib/modules/6.0.6/kernel/drivers/net/usb/r8152.ok
+- Download file ini lalu taruh di /lib/modules/6.0.6/kernel/drivers/net/usb/
+- cd /lib/modules/6.0.6/kernel/drivers/net/usb/
+- insmod r8152.ko
+- cd
+- echo "r8152" > /etc/modules.d/r8152
+- jgn lupa taruh file udev nya
+
+- jika gak autoboot coba, 
+- echo "8152" > /etc/modules.d/8152
+- echo "r8153" > /etc/modules.d/r8153
+- echo "8153" > /etc/modules.d/8153
+
