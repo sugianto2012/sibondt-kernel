@@ -1,0 +1,6 @@
+No GPU driver
+
+supported SOC
+- gxl
+- gxbb
+- gxm
