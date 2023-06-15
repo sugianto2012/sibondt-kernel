@@ -16,17 +16,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Initialization environment
-        id: init
-        env:
-          DEBIAN_FRONTEND: noninteractive
-        run: |
-          sudo timedatectl set-timezone "${TZ}"
-          echo "status=success" >> ${GITHUB_OUTPUT}
-
       - name: Create archives
         id: packaging
-        if: ${{ steps.init.outputs.status }} == 'success' && !cancelled()
         run: |
           cd pub/stable
           for kernel_dir in ./*; do [ -d "${kernel_dir}" ] && tar -czvf "${kernel_dir}.tar.gz" "${kernel_dir}"; done
