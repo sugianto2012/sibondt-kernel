@@ -24,7 +24,7 @@ jobs:
           sudo timedatectl set-timezone "${TZ}"
           echo "status=success" >> ${GITHUB_OUTPUT}
 
-      - name: Compile the kernel [ ${{ inputs.kernel_version }} ]
+      - name: Create archives
         id: packaging
         if: ${{ steps.init.outputs.status }} == 'success' && !cancelled()
         run: |
